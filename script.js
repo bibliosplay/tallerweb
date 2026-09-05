@@ -8,6 +8,11 @@ const EJEMPLO_CODIGO = `<h1 style="color:#37503b; font-family: sans-serif;">
   ¡Hola, Biblioteca del Maule!
 </h1>
 <p>Cambia este texto o el color de arriba y mira la vista previa.</p>
+<ul>
+  <li>HTML estructura</li>
+  <li>CSS colores</li>
+  <li>Responsive se adapta</li>
+</ul>
 <button onclick="this.textContent='¡Le hiciste clic!'">
   Haz clic aquí
 </button>`;
@@ -28,7 +33,7 @@ function initTabs() {
 
 // ---------- Render de contenido a partir del JSON ----------
 function renderTaller(data) {
-  const { taller, sesiones, checklistPreparacion, recursos } = data;
+  const { taller, sesiones, checklistPreparacion, recursos, conceptosClave } = data;
 
   document.getElementById('tituloTaller').textContent = taller.titulo;
   document.title = `${taller.titulo} · Taller Biblioteca Pública del Maule`;
@@ -59,23 +64,55 @@ function renderTaller(data) {
 
   const sessionsList = document.getElementById('sessionsList');
   sessionsList.innerHTML = '';
-  sesiones.forEach(s => {
-    const el = document.createElement('article');
-    el.className = 'session';
-    el.innerHTML = `
-      <div class="session-number">${String(s.numero).padStart(2, '0')}</div>
-      <div>
-        <span class="duration">${s.duracion}</span>
-        <h3>${s.titulo}</h3>
-        <p>${s.objetivo}</p>
-        <ul>${s.temas.map(t => `<li>${t}</li>`).join('')}</ul>
-        <div class="activity"><strong>Actividad práctica:</strong> ${s.actividad}</div>
+  const semanas = data.semanas || [];
+  const porSemana = semanas.map(sw => ({
+    semana: sw,
+    sesiones: sesiones.filter(s => s.semana === sw.numero)
+  }));
+
+  porSemana.forEach(({ semana, sesiones: sesionesDeSemana }) => {
+    const bloque = document.createElement('div');
+    bloque.className = 'semana';
+    bloque.innerHTML = `
+      <div class="semana-head">
+        <span class="semana-tag">Semana ${semana.numero}</span>
+        <h3>${semana.titulo}</h3>
       </div>
     `;
-    sessionsList.appendChild(el);
+    sesionesDeSemana.forEach(s => {
+      const el = document.createElement('article');
+      el.className = 'session';
+      el.innerHTML = `
+        <div class="session-number">${String(s.numero).padStart(2, '0')}</div>
+        <div>
+          <span class="duration">${s.duracion}</span>
+          <h3>${s.titulo}</h3>
+          <p>${s.objetivo}</p>
+          <ul>${s.temas.map(t => `<li>${t}</li>`).join('')}</ul>
+          <div class="activity"><strong>Actividad práctica:</strong> ${s.actividad}</div>
+        </div>
+      `;
+      bloque.appendChild(el);
+    });
+    sessionsList.appendChild(bloque);
   });
 
   renderChecklist(checklistPreparacion);
+
+  const conceptsList = document.getElementById('conceptsList');
+  conceptsList.innerHTML = '';
+  if (conceptosClave) {
+    conceptosClave.forEach(c => {
+      const el = document.createElement('article');
+      el.className = 'concept';
+      el.innerHTML = `
+        <h3>${c.termino}</h3>
+        <p>${c.explicacion}</p>
+        <p class="concept-example"><strong>Ejemplo:</strong> ${c.ejemplo}</p>
+      `;
+      conceptsList.appendChild(el);
+    });
+  }
 
   const resourcesList = document.getElementById('resourcesList');
   resourcesList.innerHTML = '';

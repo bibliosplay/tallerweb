@@ -192,6 +192,33 @@ main.wrap { padding-top: 40px; padding-bottom: 60px; }
   border-top: 1px solid var(--line);
 }
 
+.semana {
+  margin-bottom: 10px;
+}
+
+.semana-head {
+  background: var(--vine-dark);
+  color: #f3efe0;
+  padding: 14px 20px;
+  border-radius: 4px;
+  margin-top: 26px;
+}
+
+.semana-head h3 {
+  color: #fff;
+  margin: 4px 0 0;
+  font-size: 1.15rem;
+}
+
+.semana-tag {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wheat);
+}
+
 .session {
   display: grid;
   grid-template-columns: 64px 1fr;
@@ -356,6 +383,34 @@ main.wrap { padding-top: 40px; padding-bottom: 60px; }
 .checklist li.done label span {
   color: #8a8570;
   text-decoration: line-through;
+}
+
+/* Concepts */
+
+.concepts {
+  margin-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.concept {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.concept h3 {
+  margin-bottom: 6px;
+}
+
+.concept p {
+  margin: 6px 0 0;
+}
+
+.concept-example {
+  font-size: 0.92rem;
+  color: #4a4636;
+  border-left: 3px solid var(--wine);
+  padding-left: 14px;
+  margin-top: 10px;
 }
 
 /* Resources */
