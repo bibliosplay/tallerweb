@@ -3,7 +3,7 @@
     "titulo": "Mi Primera Página Web",
     "subtitulo": "Taller de creación web para usuarios de la Biblioteca Pública del Maule",
     "dirigidoA": "Personas de la comunidad de 14 años en adelante, sin experiencia previa en programación. Ideal para emprendedores locales, estudiantes, agrupaciones vecinales y adultos mayores curiosos.",
-    "duracionTotal": "4 sesiones de 2 horas (8 horas totales)",
+    "duracionTotal": "4 sesiones de 2 horas + 1 sesión opcional de 1,5 horas",
     "modalidad": "Presencial, en la sala de computación de la biblioteca",
     "cupos": "12 personas por versión (1 computador por persona)",
     "objetivoGeneral": "Que cada participante construya y deje funcionando, en su propio computador o pendrive, una página web sencilla de una sola hoja (por ejemplo, para su emprendimiento, su junta de vecinos o un proyecto personal), usando HTML, CSS y JavaScript básicos.",
@@ -67,12 +67,28 @@
       "temas": [
         "Revisión de errores comunes",
         "Organizar los archivos en una carpeta",
-        "Opciones para publicar gratis (por ejemplo Neocities o GitHub Pages)",
+        "Opciones para publicar gratis (Neocities, GitHub Pages o Vercel)",
         "Compartir el enlace o el archivo por WhatsApp o correo",
         "Muestra final: cada participante presenta su página"
       ],
       "actividad": "Publicación de la página y ronda de presentación de 3 minutos por participante frente al grupo.",
       "materiales": ["Conexión a internet", "Proyector para las presentaciones"]
+    },
+    {
+      "numero": 5,
+      "opcional": true,
+      "titulo": "¿Y ahora qué? Webapps, hosting y sitios que se actualizan solos",
+      "duracion": "1,5 horas",
+      "objetivo": "Conocer, a nivel introductorio, hacia dónde se puede avanzar después del taller para quienes quieran seguir aprendiendo.",
+      "temas": [
+        "Diferencia entre un sitio web estático y uno dinámico",
+        "Qué es una aplicación web (webapp) y en qué se diferencia de una página",
+        "Publicar con Vercel conectando el repositorio de GitHub de la sesión 4",
+        "Diseño responsive con media queries en CSS, un paso más allá de lo visto en la sesión 2",
+        "Dominio propio y certificado de seguridad (HTTPS): qué son y cuándo conviene tenerlos"
+      ],
+      "actividad": "En parejas, conectar el repositorio de GitHub creado en la sesión anterior a una cuenta de Vercel y observar cómo el sitio se actualiza solo al cambiar un archivo y subir los cambios.",
+      "materiales": ["Repositorio de GitHub de la sesión 4", "Cuenta gratuita en Vercel", "Conexión a internet"]
     }
   ],
   "checklistPreparacion": [
@@ -84,6 +100,48 @@
     { "id": "c6", "texto": "Preparar pendrives de respaldo para quienes no traigan uno" },
     { "id": "c7", "texto": "Probar la conexión a internet para la sesión de publicación" },
     { "id": "c8", "texto": "Preparar diplomas o certificados de participación" }
+  ],
+  "conceptosClave": [
+    {
+      "termino": "Sitio web estático",
+      "explicacion": "Muestra siempre la misma información a todas las personas que lo visitan, como una hoja impresa. Es lo que cada participante construye en este taller.",
+      "ejemplo": "Una página con el menú de un restaurante que no cambia según quién la mire."
+    },
+    {
+      "termino": "Sitio web dinámico",
+      "explicacion": "Cambia según quién lo visita o según datos guardados en una base de datos: inicios de sesión, carritos de compra, comentarios, etc.",
+      "ejemplo": "Una tienda online que muestra el estado real del stock o recomendaciones personalizadas."
+    },
+    {
+      "termino": "Aplicación web (webapp)",
+      "explicacion": "Un sitio que no solo muestra información, sino que permite hacer cosas dentro del navegador: guardar datos, escribir, calcular, conversar en tiempo real.",
+      "ejemplo": "Un correo electrónico web, un editor de documentos en línea o un juego que se juega desde el navegador."
+    },
+    {
+      "termino": "Hosting (alojamiento web)",
+      "explicacion": "El 'terreno' donde vive una página para que cualquier persona con internet pueda verla, y no solo quien la tiene guardada en su propio computador.",
+      "ejemplo": "Neocities, GitHub Pages y Vercel son formas gratuitas de conseguir hosting."
+    },
+    {
+      "termino": "Vercel",
+      "explicacion": "Un servicio gratuito para publicar sitios web que se conecta directamente a un repositorio de GitHub: cada vez que se sube un cambio, el sitio publicado se actualiza solo, sin subir archivos a mano.",
+      "ejemplo": "Conectar el repositorio del taller a Vercel para que la página quede publicada con una dirección propia."
+    },
+    {
+      "termino": "Diseño responsive (adaptable)",
+      "explicacion": "Que una misma página se vea bien tanto en un computador como en un celular o una tablet, ajustando tamaños y ubicación de los elementos según la pantalla.",
+      "ejemplo": "Un menú que aparece como fila de botones en el computador y como lista desplegable en el celular."
+    },
+    {
+      "termino": "Dominio propio",
+      "explicacion": "El nombre de la dirección de un sitio (por ejemplo, mibiblioteca.cl) en vez de usar la dirección genérica que entrega el servicio de hosting gratuito.",
+      "ejemplo": "Pasar de midirección.vercel.app a midireccion.cl comprando un dominio."
+    },
+    {
+      "termino": "HTTPS y el candado del navegador",
+      "explicacion": "El símbolo de candado que aparece junto a la dirección del sitio indica que la conexión entre quien visita la página y el sitio está protegida.",
+      "ejemplo": "Los servicios de hosting gratuitos vistos en el taller (Neocities, GitHub Pages, Vercel) entregan este candado automáticamente, sin configuración extra."
+    }
   ],
   "recursos": [
     {
@@ -105,6 +163,16 @@
       "titulo": "GitHub Pages",
       "descripcion": "Alternativa gratuita para publicar sitios web estáticos usando una cuenta de GitHub.",
       "url": "https://pages.github.com/"
+    },
+    {
+      "titulo": "Vercel",
+      "descripcion": "Publica sitios conectados a un repositorio de GitHub; el sitio se actualiza solo con cada cambio subido. Útil también si más adelante se quiere pasar a proyectos dinámicos.",
+      "url": "https://vercel.com/"
+    },
+    {
+      "titulo": "Guía de diseño responsive (web.dev)",
+      "descripcion": "Explicación práctica, con ejemplos, de cómo hacer que una página se vea bien en cualquier tamaño de pantalla.",
+      "url": "https://web.dev/learn/design/"
     }
   ]
 }
