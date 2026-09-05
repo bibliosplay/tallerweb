@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Primera Página Web · Taller Biblioteca Pública del Maule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <p class="brand">Biblioteca Pública del Maule</p>
+    <nav class="tabs" id="tabs">
+      <button class="tab is-active" data-tab="programa">Programa</button>
+      <button class="tab" data-tab="sesiones">Sesiones</button>
+      <button class="tab" data-tab="practica">Práctica en vivo</button>
+      <button class="tab" data-tab="preparacion">Preparación</button>
+      <button class="tab" data-tab="recursos">Recursos</button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <h1 id="tituloTaller">Mi Primera Página Web</h1>
+    <p class="hero-sub" id="subtituloTaller">Cargando taller…</p>
+    <dl class="hero-facts" id="heroFacts"></dl>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <section class="panel is-active" id="panel-programa">
+    <h2>De qué se trata</h2>
+    <p id="objetivoGeneral" class="lede"></p>
+
+    <div class="grid-two">
+      <div>
+        <h3>Dirigido a</h3>
+        <p id="dirigidoA"></p>
+      </div>
+      <div>
+        <h3>Lo único que hace falta</h3>
+        <ul id="requisitos" class="plain-list"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-sesiones">
+    <h2>Las cuatro sesiones</h2>
+    <p class="lede">Cada sesión se construye sobre la anterior: al terminar la cuarta, la página ya está lista para mostrarse.</p>
+    <div class="sessions" id="sessionsList"></div>
+  </section>
+
+  <section class="panel" id="panel-practica">
+    <h2>Práctica en vivo</h2>
+    <p class="lede">Este mismo editor se puede proyectar durante las sesiones 1 y 2 para mostrar, en tiempo real, cómo un cambio en el código cambia la página.</p>
+    <div class="playground">
+      <div class="editor-pane">
+        <div class="pane-label">
+          <span>código.html</span>
+          <button id="resetCode" class="ghost-btn" type="button">Restablecer</button>
+        </div>
+        <textarea id="codeInput" spellcheck="false"></textarea>
+      </div>
+      <div class="preview-pane">
+        <div class="pane-label"><span>vista previa</span></div>
+        <iframe id="previewFrame" title="Vista previa en vivo"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-preparacion">
+    <h2>Lista de preparación</h2>
+    <p class="lede">Para quien facilita el taller: revisar antes de abrir las inscripciones.</p>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <p class="progress-label" id="progressLabel">0 de 0 listas</p>
+    <ul class="checklist" id="checklist"></ul>
+  </section>
+
+  <section class="panel" id="panel-recursos">
+    <h2>Para seguir aprendiendo</h2>
+    <p class="lede">Enlaces para dejar en un afiche o compartir por WhatsApp al terminar el taller.</p>
+    <div class="resources" id="resourcesList"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Programa elaborado para la red de Bibliotecas Públicas de la Región del Maule.</p>
+  </div>
+</footer>
+
+<script src="datos-respaldo.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
